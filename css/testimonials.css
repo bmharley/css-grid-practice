@@ -1,0 +1,46 @@
+body {
+  padding: 100px;
+}
+.testimonials {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "head-primary head-primary head-secondary aside"
+  "foot-secondary foot-primary foot-primary aside";
+  grid-gap: 1rem;
+  list-style-type: none;
+  background: rgb(172, 172, 172);
+}
+
+.testimonial {
+  display: block;
+  margin-bottom: 0;
+  background: yellow;
+  border: 1px solid black;
+}
+
+.testimonial--head-primary {
+  grid-area: head-primary;
+  background-color: pink;
+}
+
+.testimonial--head-secondary {
+  grid-area: head-secondary;
+  background-color: green;
+}
+
+.testimonial--foot-secondary {
+  grid-area: foot-secondary;
+  background-color: grey;
+}
+
+.testimonial--foot-primary {
+  grid-area: foot-primary;
+  background-color: black;
+}
+
+.testimonial--aside {
+  grid-area: aside;
+  background: blue;
+}
