@@ -1,46 +1,163 @@
-body {
-  padding: 100px;
+:root {
+  --page-background: hsl(210, 46%, 95%);
+  --testimonial-head-primary-background: hsl(263, 55%, 52%);
+  --testimonial-head-secondary-background: hsl(217, 19%, 35%);
+  --testimonial-foot-primary-background: hsl(219, 29%, 14%);
+  --testimonial-foot-secondary-background: hsl(0, 0%, 100%);
+  --testimonial-aside-background: hsl(0, 0%, 100%);
+  --testimonial-light-text-colour: hsl(210, 46%, 95%);
+  --testimonial-dark-text-colour: hsl(219, 29%, 14%);
+  --testimonial-light-avatar-border-colour: hsla(210, 46%, 95%, 0.5);
+  --testimonial-dark-avatar-border-colour: hsl(219, 29%, 14%, 0.5);
 }
+
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3em;
+  line-height: 1.4;
+  font-weight: 500;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.page-contain {
+  box-sizing: border-box;
+  min-height: 100%;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: var(--page-background);
+}
+
+@media only screen and (min-width: 769px) {
+  .page-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-contain {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
 .testimonials {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-  "head-primary head-primary head-secondary aside"
-  "foot-secondary foot-primary foot-primary aside";
-  grid-gap: 1rem;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   list-style-type: none;
-  background: rgb(172, 172, 172);
+}
+
+@media only screen and (min-width: 769px) {
+  .testimonials {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "head-primary head-primary head-secondary aside"
+      "foot-secondary foot-primary foot-primary aside";
+    grid-gap: 2rem;
+    width: 80%;
+  }
 }
 
 .testimonial {
   display: block;
+  padding: 2rem;
   margin-bottom: 0;
-  background: yellow;
-  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 14px 14px 36px -19px rgba(0,0,0,0.39);
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonial {
+    margin-bottom: 2rem;
+  }
 }
 
 .testimonial--head-primary {
   grid-area: head-primary;
-  background-color: pink;
+  background-color: var(--testimonial-head-primary-background);
+  color: var(--testimonial-light-text-colour);
+  background-image: url('/images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: 80% 0;
 }
 
 .testimonial--head-secondary {
   grid-area: head-secondary;
-  background-color: green;
+  background-color: var(--testimonial-head-secondary-background);
+  color: var(--testimonial-light-text-colour);
 }
 
 .testimonial--foot-secondary {
   grid-area: foot-secondary;
-  background-color: grey;
+  background-color: var(--testimonial-foot-secondary-background);
+  color: var(--testimonial-dark-text-colour);
 }
 
 .testimonial--foot-primary {
   grid-area: foot-primary;
-  background-color: black;
+  background-color: var(--testimonial-foot-primary-background);
+  color: var(--testimonial-light-text-colour);
 }
 
 .testimonial--aside {
   grid-area: aside;
-  background: blue;
+  background-color: var(--testimonial-aside-background);
+  color: var(--testimonial-dark-colour);
+}
+
+.testimonial__author {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.testimonial__author-avatar {
+  float: left;
+  margin-right: 2rem;
+  border-radius: 50%;
+  border: 0.2rem solid;
+  height: 3.6rem;
+}
+
+.testimonial__author-avatar--dark {
+  border-color: var(--testimonial-dark-avatar-border-colour);
+}
+
+.testimonial__author-avatar--light {
+  border-color: var(--testimonial-light-avatar-border-colour);
+}
+
+.testimonial__author-name {
+  display: block;
+}
+
+.testimonial__author-description {
+  display: block;
+  opacity: 0.5;
+}
+
+.testimonial__heading {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.testimonial__quote {
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.7;
 }
