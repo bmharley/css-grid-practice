@@ -1,5 +1,6 @@
 :root {
   --page-background: hsl(210, 46%, 95%);
+  --text-color: hsl(219, 29%, 14%);
   --testimonial-head-primary-background: hsl(263, 55%, 52%);
   --testimonial-head-secondary-background: hsl(217, 19%, 35%);
   --testimonial-foot-primary-background: hsl(219, 29%, 14%);
@@ -24,9 +25,10 @@ body {
   line-height: 1.4;
   font-weight: 500;
   font-family: "Barlow Semi Condensed", sans-serif;
+  color: var(--text-color);
 }
 
-.page-contain {
+.content {
   box-sizing: border-box;
   min-height: 100%;
   width: 100%;
@@ -36,7 +38,7 @@ body {
 }
 
 @media only screen and (min-width: 769px) {
-  .page-contain {
+  .content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +46,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .page-contain {
+  .content {
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -54,20 +56,28 @@ body {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  list-style-type: none;
 }
 
 @media only screen and (min-width: 769px) {
   .testimonials {
     display: grid;
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
+      "title title title title"
       "head-primary head-primary head-secondary aside"
       "foot-secondary foot-primary foot-primary aside";
     grid-gap: 2rem;
     width: 80%;
   }
+}
+
+.testimonials__main-heading {
+  grid-area: title;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 4.5rem;
+  text-align: center;
 }
 
 .testimonial {
@@ -150,13 +160,16 @@ body {
 }
 
 .testimonial__heading {
+  display: block;
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 600;
+  font-style: normal;
 }
 
 .testimonial__quote {
+  display: block;
   margin-top: 0;
   margin-bottom: 0;
   opacity: 0.7;
